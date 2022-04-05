@@ -1,0 +1,45 @@
+<div class="main-cont">
+  <button (click)="addNewItem()"><i class="fa fa-times" aria-hidden="true"></i></button>
+
+  <div
+    [ngStyle]="{
+      backgroundImage:
+        'url(https://image.tmdb.org/t/p/w500/' + moveieDetails.poster_path + ')'
+    }"
+    class="movie-container"
+  >
+    <div class="sub-sect">
+      <div>
+        <img
+          [src]="'https://image.tmdb.org/t/p/w500/' + moveieDetails.poster_path"
+          alt=""
+        />
+      </div>
+      <div class="right">
+        <h2>
+          {{ moveieDetails.title }}({{
+            moveieDetails.release_date | date: "y"
+          }})
+        </h2>
+
+        <h5>
+          {{ moveieDetails.release_date | date: "M/d/y" }}
+          <span>({{ moveieDetails.production_countries[0].iso_3166_1 }})</span>
+        </h5>
+        <ul>
+          <li
+            class="genrename"
+            *ngFor="let genre of moveieDetails.genres; let i = index"
+          >
+            {{ genre.name }}
+            {{ i == moveieDetails.genres.length - 1 ? "" : "," }}
+          </li>
+        </ul>
+
+        <h3 class="overview">Overview</h3>
+        <p class="tagline">{{ moveieDetails.tagline }}</p>
+        <p>{{ moveieDetails.overview }}</p>
+      </div>
+    </div>
+  </div>
+</div>

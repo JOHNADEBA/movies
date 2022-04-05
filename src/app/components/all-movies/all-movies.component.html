@@ -1,0 +1,17 @@
+<div class="article-container">
+  <article *ngFor="let movie of clientMovies">
+    <img
+      [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
+      alt=""
+    />
+    <div class="dotted">
+      <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+    </div>
+    <h2 class="name">
+      <a href=""> {{ movie.title }}</a>
+    </h2>
+    <p class="date">{{ movie.release_date | date }}</p>
+  </article>
+  <button class="loadmore" (click)="onLoadMore()">Load More</button>
+</div>
+

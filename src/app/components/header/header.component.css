@@ -1,0 +1,22 @@
+.header{
+    background: rgb(3, 37, 65);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 1.2rem;
+      margin-bottom: 1rem;
+}
+img{
+    cursor: pointer;
+    height: 1.5rem;
+    margin-left: 1.2rem;
+}
+.all-menu{
+    list-style: none;
+    color: white;
+    display: inline-flex;
+}
+li{
+    cursor: pointer;
+    margin: 0 1rem;
+}

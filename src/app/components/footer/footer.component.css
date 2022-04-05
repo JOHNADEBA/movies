@@ -1,0 +1,40 @@
+.footer {
+  color: white;
+  padding: 2rem 2rem 2rem;
+  background: rgb(3, 37, 65);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.left {
+  flex: 1;
+}
+img {
+  height: 5rem;
+  float: right;
+  margin-bottom: 2.5rem;
+}
+.comm {
+  text-align: center;
+  clear: both;
+  border-radius: 0.5rem;
+  background: white;
+  color: rgb(1, 180, 228);
+  font-weight: bolder;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+}
+
+.right {
+  text-align: center;
+  margin-left: 3rem;
+  flex: 4;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: rgb(196, 193, 193);
+}

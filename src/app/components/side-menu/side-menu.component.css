@@ -1,0 +1,91 @@
+h3 {
+  color: rgba(0, 0, 0, 0.4);
+}
+.outer-card {
+  width: 100%;
+  border: 1px solid rgb(228, 223, 223);
+  border-radius: 0.5rem;
+  font-size: 0.7rem;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.card-line {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem 0rem 1rem;
+  border-bottom: 1px solid rgb(228, 223, 223);
+}
+.card-body {
+  padding: 0 0 1rem 1rem;
+}
+.card-body h3 {
+  font-size: 0.9rem;
+  font-weight: 100;
+}
+select {
+  width: 90%;
+  padding: 0.4rem;
+  border-radius: 0.3rem;
+  background: #e4e7eb;
+}
+select:hover {
+  background: #c7cdd5;
+}
+.extra-body {
+  border-bottom: 1px solid rgb(228, 223, 223);
+}
+.fa {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.search,
+.search-active {
+  margin-top: 1rem;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  font-size: 1.1rem;
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 2rem;
+  border: none;
+}
+
+
+.genbtnCont {
+  display: inline-flex;
+}
+.genbtn {
+  cursor: pointer;
+  text-decoration: none;
+  background: transparent;
+  display: inline-flex;
+  border: 1px solid #9e9e9e;
+  border-radius: 14px;
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+  margin-right: 10px;
+  margin-top: 8px;
+}
+
+.genbtn:hover {
+  border: none;
+  color: white;
+  background: rgb(1, 180, 228);
+}
+
+.search-active {
+  cursor: pointer;
+  background: rgb(1, 180, 228);
+  color: white;
+}
+.search-active:hover {
+  background: rgb(3, 37, 65);
+}
+
+.genbtn-active {  
+  border: none;
+  background: rgb(1, 180, 228);
+  color: white;
+}

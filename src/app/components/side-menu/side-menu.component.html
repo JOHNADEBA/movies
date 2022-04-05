@@ -1,0 +1,69 @@
+<h2>Popular Movies</h2>
+<div class="outer-card">
+  <div class="card-line" (click)="showSort = !showSort">
+    <h2>Sort</h2>
+    <i *ngIf="showSort" class="fa fa-angle-down" aria-hidden="true"></i>
+    <i *ngIf="!showSort" class="fa fa-angle-right" aria-hidden="true"></i>
+  </div>
+
+  <div class="card-body" *ngIf="showSort">
+    <h3>Sort Results By</h3>
+
+    <select
+      name="selectedQuantity"
+      [(ngModel)]="selectedQuantity"
+      (ngModelChange)="getSortValue(selectedQuantity)"
+    >
+      <option value="popularity.desc">Popularity Descending</option>
+      <option value="popularity.asc">Popularity Ascending</option>
+      <option value="vote_average.desc">Rating Descending</option>
+      <option value="vote_average.asc">Rating Ascending</option>
+      <option value="release_date.desc">Release Date Descending</option>
+      <option value="release_date.asc">Release Date Ascending</option>
+      <option value="original_title.desc">Title(A-Z) Descending</option>
+    </select>
+  </div>
+</div>
+
+<div class="outer-card">
+  <div class="card-line" (click)="showFilter = !showFilter">
+    <h2>Filter</h2>
+    <i *ngIf="showFilter" class="fa fa-angle-down" aria-hidden="true"></i>
+    <i *ngIf="!showFilter" class="fa fa-angle-right" aria-hidden="true"></i>
+  </div>
+
+  <div class="card-body"  *ngIf="showFilter">
+    <h3>Genre</h3>
+    <div class="genbtnCont" *ngFor="let genre of allGenres; let i = index" >
+      <button (click)="selectGenre(genre.id)" class="genbtn"  [ngClass]="{'genbtn-active' : isSelected.includes(genre.id)}"  >{{ genre.name }}</button>
+    </div>
+  </div>
+
+  </div>
+  <div class="outer-card">
+    <div class="card-line" (click)="showWhere = !showWhere">
+      <h2>Where To Watch</h2>
+      <i *ngIf="showWhere" class="fa fa-angle-down" aria-hidden="true"></i>
+      <i *ngIf="!showWhere" class="fa fa-angle-right" aria-hidden="true"></i>
+    </div>
+    <div *ngIf="showWhere">
+      <div class="card-body extra-body">
+        <h3>My Services</h3>
+        <input type="checkbox" name="" id="" />
+        <span>Restrict searches to my subscribed services?</span>
+      </div>
+      <div style="padding-bottom: 2rem" class="card-body">
+        <h3>Country</h3>
+        <select name="" id="">
+          <option *ngFor="let country of allCountries" value="">
+            <!-- <img [src]="country.flags.png" [alt]="country.name.official" /> -->
+            {{ country.name.official }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <button (click)="getAllFilters()" [ngClass]="isActive ? 'search-active' : 'search'" class="search">
+    Search
+  </button>
+

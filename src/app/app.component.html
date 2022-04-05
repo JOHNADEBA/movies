@@ -1,0 +1,32 @@
+<app-header></app-header>
+<app-movie *ngIf="showMovieDetail"   (modalShow)="showSingleMovie($event)" [moveieDetails]="moveieDetails"></app-movie>
+
+<div *ngIf="!showMovieDetail" class="main">
+  <app-side-menu (newGenreEvent)="getFilters($event)" class="side"></app-side-menu>
+  <div class="movies">
+    <div class="article-container">
+      <article *ngFor="let movie of clientMovies">
+        <img (click)="getMovie(movie.id, true)"
+          [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
+          alt=""
+        />
+        <div class="dotted">
+          <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+        </div>
+        <h2 class="name">
+          <div class="rate-container">
+            <p>{{ movie.vote_average * 10 }} <span>%</span></p>
+
+          </div>
+         <p class="title" (click)="getMovie(movie.id, true)">{{ movie.title }}</p>
+          <!-- <a routerLink="movie/{{ movie.id }}"> </a> -->
+        </h2>
+        <p class="date">{{ movie.release_date | date }}</p> 
+      </article>
+      <button class="loadmore" (click)="onLoadMore()">Load More</button>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+<router-outlet></router-outlet>
